@@ -8,9 +8,8 @@ const component = (msg) => {
   return element;
 }
 
-document.body.appendChild(component({ greeting: 'Hello', content: 'Webpack' }));
+document.body.appendChild(component({ greeting: 'Hello', content: 'Webpack-Flash-Cards' }));
 
-var cards = []
 var Card = function(subject, answer) {
     this.subject = subject;
     this.answer = answer;
@@ -28,10 +27,11 @@ Card.prototype.logCard = function() {
   console.log(this.subject + " " + this.answer + " created");
 }
 
+
 function addCard() {
   var input1 = document.getElementById('subject');
   var input2 = document.getElementById('answer');
-  var person = new Person(input1.value, input2.value);
+  var card = new Card(input1.value, input2.value);
   card.addToCards();
   card.logCard();
   input1.value = null;
