@@ -8,7 +8,7 @@ var Card = function(subject, answer) {
 Card.prototype.addToCards = function() {
   var list =   document.getElementById("cards");
   var li = document.createElement('li');
-  li.innerHTML = this.subject + ", " + this.answer;
+  li.innerHTML = this.subject + ": " + this.answer;
   list.appendChild(li);  
 }
 
@@ -20,9 +20,9 @@ Card.prototype.logCard = function() {
 function addCard() {
   var input1 = document.getElementById('subject');
   var input2 = document.getElementById('answer');
-  var person = new Card(input1.value, input2.value);
-  person.addToCards();
-  person.logCard();
+  var card = new Card(input1.value, input2.value);
+  card.addToCards();
+  card.logCard();
   input1.value = null;
   input2.value = null;
 }
